@@ -1,43 +1,12 @@
-import { html } from 'lit-html';
-import { styleMap } from 'lit-html/directives/style-map';
-import './button.css';
+import { customElement, LitElement, html, property } from 'lit-element';
 
-export interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
-   */
-  label: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
+@customElement('x-button')
+export class Button extends LitElement {
+    @property() icon?: string;
+
+    private secret = 'don\'t tell anyone';
+
+    render() {
+        return html`<button>Click me</button>`;
+    }
 }
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({ primary, backgroundColor = null, size, label, onClick }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-
-  return html`
-    <button
-      type="button"
-      class=${['storybook-button', `storybook-button--${size || 'medium'}`, mode].join(' ')}
-      style=${styleMap({ backgroundColor })}
-      @click=${onClick}
-    >
-      ${label}
-    </button>
-  `;
-};

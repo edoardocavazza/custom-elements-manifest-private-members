@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "stories/Button.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Button",
+          "members": [
+            {
+              "kind": "field",
+              "name": "icon",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "secret",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "'don\\'t tell anyone'"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "icon",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "icon"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit-element"
+          },
+          "tagName": "x-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Button",
+          "declaration": {
+            "name": "Button",
+            "module": "stories/Button.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "x-button",
+          "declaration": {
+            "name": "Button",
+            "module": "stories/Button.ts"
+          }
+        }
+      ]
+    }
+  ]
+}
